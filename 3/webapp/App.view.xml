@@ -1,0 +1,40 @@
+<mvc:View controllerName="ui5.quickstart.App" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:c="sap.ui.core"
+    xmlns:t="sap.tnt"
+    xmlns:mvc="sap.ui.core.mvc">
+    <App id="app">
+        <Page title="My App">
+            <Button icon="sap-icon://sap-ui5" text="Go!" press=".onPress" type="Emphasized" class="sapUiSmallMargin"></Button>
+        </Page>
+        <Page id="intro" title="Create Enterpries-Ready Web Apps with Ease">
+            <l:BlockLayout background="Light">
+                <l:BlockLayoutRow >
+                    <l:BlockLayoutCell >
+                        <c:Icon color="#1873b4" src="sap-icon://sap-ui5" size="20rem" class="sapUiMediumMarginBottom" width="100%" />
+                        <Title level="H1" titleStyle="H1" text="This is UI5" width="100%" textAlign="Center"></Title>
+                    </l:BlockLayoutCell>
+                </l:BlockLayoutRow>
+                <l:BlockLayoutRow>
+                    <l:BlockLayoutCell>
+                        <FlexBox items="{/features}" justifyContent="Center" wrap="Wrap" class="sapUiSmallMarginBottom">
+                            <t:InfoLabel text="{}" class="sapUiSmallMarginTop sapUiSmallMarginEnd"></t:InfoLabel>
+                        </FlexBox>
+                    </l:BlockLayoutCell>
+                </l:BlockLayoutRow>
+                <l:BlockLayoutRow>
+                    <l:BlockLayoutCell>
+                        <Panel headerText="Are you ready?" expandable="true">
+                            <Switch change=".onChange" customTextOn="yes" customTextOff="no"></Switch>
+                            <l:HorizontalLayout id="ready" visible="false" class="sapUiSmallMargin">
+                                <Text text="Ok, let's get you started!" class="sapUiTinyMarginEnd"></Text>
+                                <Link text="Lear more" href="https://sdk.openui5.org"></Link>
+                            </l:HorizontalLayout>
+                        </Panel>
+                    </l:BlockLayoutCell>
+                </l:BlockLayoutRow>
+            </l:BlockLayout>
+        </Page>
+    </App>
+</mvc:View>
